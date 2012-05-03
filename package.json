@@ -1,0 +1,27 @@
+{
+  "name": "easydoc",
+  "version": "0.1.0",
+  "author": "Damien feugas <damien.feugas@gmail.com>",
+  "description": "A simple technical documentation site with markdown files",
+  "keywords": [
+	"markdown",
+    "web",
+    "documentation"
+  ],
+  "bin": {
+    "teckmark": "./bin/teckmark"
+  },
+  "main": "./lib/teckmark",
+  "dependencies" : {
+   "express": "2.5.9",
+   "node-markdown": "0.1.0",
+   "commander": "0.6.0",
+   "mu2": "0.5.13"
+  },
+  "devDependencies": {
+  },
+  "license": "LGPL v3",
+  "engine": {
+    "node": ">=0.6"
+  }
+}

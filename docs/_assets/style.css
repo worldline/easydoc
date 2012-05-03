@@ -1,0 +1,117 @@
+/*******************************************************************************
+ * Common styles
+ */
+ 
+ html, body {
+	color: #333333;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+}
+
+body {
+	margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul {
+	list-style-type: square;
+	padding-left: 20px;
+}
+
+/*******************************************************************************
+ * Common header
+ */
+ 
+header {
+	background-color: #E5E5E5;
+	padding: 20px 60px;
+}
+header .search input {
+	font-size: 1.3em;
+    padding: 3px 5px;
+    width: 35%;
+    border: none;
+    vertical-align: 2px;
+}
+header .search button {
+	background-color: #4D90FE;
+    border: 1px solid #4D40FE;
+    border-radius: 2px;
+    color: white;
+    padding: 1px 10px;
+}
+
+/*******************************************************************************
+ * Common Title
+ */
+
+body > .main-title {
+	font-size: 1.5em;
+	padding: 25px 60px 15px;
+	border-bottom: 1px solid #EBEBEB;
+}
+
+/*******************************************************************************
+ * page.tpl navigation
+ */
+
+nav {
+    display: table-cell;
+    padding: 10px 0px 10px 60px;
+    font-size: 0.8em;
+}
+
+.search-result > a,
+.search-result > a:visited
+.search-result > a:hover,
+nav a,
+nav a:visited
+nav a:hover {
+	color: #777777;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	padding: 4px 30px 3px 10px;
+}
+
+.search-result > a:hover,
+nav a:hover {
+	background-color: #E5E5E5;
+	color: black;
+}
+nav ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+/*******************************************************************************
+ * page.tpl main content
+ */
+
+body.page .main {
+	display: table-cell;
+	padding: 10px 60px;
+}
+
+/*******************************************************************************
+ * search.tpl main content
+ */
+
+body.search .main {
+	display: block;
+	padding: 10px 60px;
+}
+.search-result {
+	padding-top: 20px; 
+}
+.search-result > a {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 5px;
+	display: block;
+}
+.search-result .hit::before,
+.search-result .hit::after {
+	content:"..."
+}
