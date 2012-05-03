@@ -9,9 +9,9 @@
     "documentation"
   ],
   "bin": {
-    "teckmark": "./bin/teckmark"
+    "easydoc": "./bin/easydoc"
   },
-  "main": "./lib/teckmark",
+  "main": "./lib/easydoc",
   "dependencies" : {
    "express": "2.5.9",
    "node-markdown": "0.1.0",

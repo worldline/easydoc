@@ -1,9 +1,8 @@
-# Welcome to Teck-mark !
-
+# Welcome to Easydoc !
 
 ## What's the deal ?
 
-Teck-mark is a tiny web server that publish your documentation written in 
+Easydoc is a tiny web server that publish your documentation written in 
 [markdown](http://daringfireball.net/projects/markdown/ "markdown official website").
 
 
@@ -13,26 +12,33 @@ It provides you a file index for browsing, and a full-text search.
 It's very basic, and very easy to use and customize.
 
 
+## Installation
+
+1. You'll need the appropriate [NodeJs](http://nodejs.org/#download) installation on your system.
+2. Download the [latest version](https://github.com/feugy/easydoc/zipball/master) of easydoc and unzip it
+3. From the command line, build it: > npm install -g
+4. Also from the command line, run it > easydoc
+
 ## How can I use it ?
 
 Once the server is running, simply drops your documentation files written in 
-markdown and with the 'mkd' extension in the _docs_ folder.
+markdown and with the 'md' extension in the _docs_ folder.
 
 
-Let's say your file is named 'myfile.mkd'
-With a browser, go to [http://localhost/myfile.mkd]: that's it !
+Let's say your file is named 'myfile.md'
+With a browser, go to [http://localhost/myfile.md]: that's it !
 
 
 ## How do I customize the look&feel ?
 
-For the markup, just edit the two template files:
+For the markup, just edit the two template files inside the __assets_ folder:
 
 - page.tpl. It displays a single page with the file index and search box.
 - search.tpl. It shows the search results.
 
 They are using the [mustache](http://mustache.github.com/) templating language. Very easy to use.
 
-Fot the rendering rules, all is in the style.css file.
+Fot rendering customizations, all is in the style.css file.
 
 
 ## I need to customize the root folder !
@@ -41,7 +47,7 @@ When launching the server, you can specify your root folder.
 
 Here is the command line documentation of the server:
 
-    Usage: ./techmark [options]
+    Usage: ./easydoc [options]
     
     Options:
     
@@ -57,8 +63,10 @@ Here is the command line documentation of the server:
 
 Yes, plenty ! But i'll enrich it latter ^_^
 
-- all markdown files at the same level. No sub-folders.
-- to appear in the page index, files must have the .mkd extension.
+- all markdown files at the same level, in the same folder. No sub-folders.
+- assets (page.tpl, search.tpl, style.css, images) must be in the __assets_ folder inside the document root.
+- no page templating (mustache) in plain html file.
+- markdown files must have the .md extension.
 
 ---
   have fun !
