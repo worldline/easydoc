@@ -54,6 +54,7 @@ Here is the command line documentation of the server:
         -h, --help            output usage information
         -V, --version         output the version number
         -r, --root [docs]     Absolute or relative path to the root folder containing static and markdown files.
+        -t, --title label     Title of the site as printed in the tab or title bar of the browser.
         -p, --port [80]       Local port of the created Http server.
         -h, --host [0.0.0.0]  Hostname of the created Http server.
         --no-cache            Disable mustache template caching (for dev purposes)

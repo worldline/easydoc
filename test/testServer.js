@@ -8,7 +8,8 @@ var _ = require('underscore');
 var defaultOptions = {
 	port:8080, 
 	host:'localhost', 
-	root:path.join(fixtures, 'simple')
+	root:path.join(fixtures, 'simple'),
+	title: "testTitle"
 };
 
 var url = 'http://'+defaultOptions.host+':'+defaultOptions.port;
@@ -23,12 +24,15 @@ before(function(done){
 });
 
 describe('server tests', function(){
-
   it('should index be accessible', function(done){
   	// when requesting the url
   	request.get(url, function(err, resp, body) {
   		should.not.exist(err);
   		resp.statusCode.should.equal(200);
+  		body.indexOf('<title>testTitle</title>').should.not.eql(-1);
+  		body.indexOf('<a href="a__index.md">index</a>').should.not.eql(-1);
+  		body.indexOf('<a href="b__another.md">another</a>').should.not.eql(-1);
+  		body.indexOf('<a href="b__another.md">another</a>').should.be.above(body.indexOf('<a href="a__index.md">index</a>'));// ordered
   		done();
   	});
   });
@@ -37,14 +41,10 @@ describe('server tests', function(){
   	// when requesting the url
   	request.post(url+'/search', {form:{searched:'test'}}, function(err, resp, body) {
   		should.not.exist(err);
-  		console.log(body);
   		resp.statusCode.should.equal(200);
   		body.indexOf('No results found').should.eql(-1);
   		body.indexOf('With another testing case').should.not.eql(-1);
   		body.indexOf('# simple test').should.not.eql(-1);
-  		body.indexOf('<a href="a__index.md">index</a>').should.not.eql(-1);
-  		body.indexOf('<a href="b__another.md">another</a>').should.not.eql(-1);
-  		body.indexOf('<a href="b__another.md">another</a>').should.be.above(body.indexOf('<a href="a__index.md">index</a>'));// ordered
   		done();
   	});
   });

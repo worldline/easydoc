@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-        <title>Easydoc</title>
+        <title>{{title}}</title>
         <link type="text/css" href="_assets/style.css" rel="stylesheet">
 	</head>
 	<body class="search">
