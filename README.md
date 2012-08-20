@@ -28,6 +28,14 @@ markdown and with the 'md' extension in the _docs_ folder.
 Let's say your file is named 'myfile.md'
 With a browser, go to [http://localhost/myfile.md]: that's it !
 
+If there are multiple files in the directory, you can sort the files by prefixing them with an arbitrary string and two underscores:
+aaa__firstfile.md
+aab__secondfile.md
+...
+z__lastfile.md
+The pages mustache tag will contain the list of file, sorted, with the prefix (XXX__) and extension removed.
+An, when you request the root directory, ithe page rendered will be the first page of this smae list.
+
 
 ## How do I customize the look&feel ?
 
