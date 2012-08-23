@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/feugy/easydoc.png)](http://travis-ci.org/feugy/easydoc)
 # Welcome to Easydoc !
 
 ## What's the deal ?
