@@ -17,13 +17,13 @@
   },
   "main": "./lib/easydoc",
   "dependencies" : {
-   "express": "2.5.9",
+   "express": "2.5.11",
    "node-markdown": "0.1.0",
-   "commander": "0.6.0",
+   "commander": "1.0.0",
    "mu2": "0.5.13"
   },
   "devDependencies": {
-    "mocha": "1.1.0",
+    "mocha": "1.3.0",
     "request": "2.9.202",
     "should": "0.6.3",
     "underscore": "1.3.3"

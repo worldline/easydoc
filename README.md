@@ -28,6 +28,13 @@ markdown and with the 'md' extension in the _docs_ folder.
 Let's say your file is named 'myfile.md'
 With a browser, go to [http://localhost/myfile.md]: that's it !
 
+If there are multiple files in the directory, you can sort the files by prefixing them with an arbitrary string and two underscores:
+aaa\_\_firstfile.md, aab\_\_secondfile.md, ..., z\_\_lastfile.md
+
+The pages mustache tag will contain the list of files, sorted, with the prefix (XXX\_\_) and extension removed.
+
+And, when you request the root directory, the page rendered will be the first element of this same list.
+
 
 ## How do I customize the look&feel ?
 
@@ -54,6 +61,7 @@ Here is the command line documentation of the server:
         -h, --help            output usage information
         -V, --version         output the version number
         -r, --root [docs]     Absolute or relative path to the root folder containing static and markdown files.
+        -t, --title label     Title of the site as printed in the tab or title bar of the browser.
         -p, --port [80]       Local port of the created Http server.
         -h, --host [0.0.0.0]  Hostname of the created Http server.
         --no-cache            Disable mustache template caching (for dev purposes)
