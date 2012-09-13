@@ -1,6 +1,6 @@
 {
   "name": "easydoc",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "feugy <damien.feugas@gmail.com>",
   "description": "A simple technical documentation site with markdown files",
   "repository": {
@@ -17,7 +17,7 @@
   },
   "main": "./lib/easydoc",
   "dependencies" : {
-   "express": "2.5.11",
+   "express": "3.0.0rc2",
    "node-markdown": "0.1.0",
    "commander": "1.0.0",
    "mu2": "0.5.13"

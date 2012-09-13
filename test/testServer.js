@@ -52,8 +52,6 @@ describe('server tests', function(){
 
 // Gracefully close server
 after(function(done){
-	app.on('close', function() {
-		done();
-	});
 	app.close();
+  done()
 });
