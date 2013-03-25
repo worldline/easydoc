@@ -1,14 +1,22 @@
 #!/usr/bin/env node
 var cli = require('commander');
 var launchServer = require('../lib/easydoc');
+var path = require('path');
+require('js-yaml');
 
-cli.version('0.1.0')
+cli.version('0.5.0')
   .option('-r, --root [docs]', 'Absolute or relative path to the root folder containing static and markdown files.', String, 'docs')
-  .option('-t, --title label', 'Title of the site as printed in the tab or title bar of the browser.', String, 'Easydoc')
+  .option('-t, --title [label]', 'Title of the site as printed in the tab or title bar of the browser.', String, 'Easydoc')
   .option('-p, --port [80]', 'Local port of the created Http server.', parseInt, 80)
   .option('-h, --host [0.0.0.0]', 'Hostname of the created Http server.', String, '0.0.0.0')
   .option('--no-cache', 'Disable mustache template caching (for dev purposes)')
+  .option('-v, --variables [file]', 'YAML file containing platform dependent variables used inside markdown files', String)
   .parse(process.argv);
+
+// Load variables
+if(cli.variables) {
+  cli.variables = require(path.normalize(path.resolve(process.cwd(), cli.variables)));
+}
 
 // Launches the server on the given host and port.
 launchServer(cli);

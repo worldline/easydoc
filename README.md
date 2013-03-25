@@ -7,7 +7,9 @@ Easydoc is a tiny web server that publish your documentation written in
 
 It can also serve any other web resources aside with your markdown files
 
-It provides you a file index for browsing, and a full-text search.
+It provides you a file index for browsing, and a full-text search (still in progress).
+
+You'll be able to use also [mustache](http://mustache.github.com/) templates and variables, either global (YAML file) or local to page (metas).
 
 It's very basic, and very easy to use and customize.
 
@@ -16,116 +18,18 @@ It's very basic, and very easy to use and customize.
 
 1. You'll need the appropriate [NodeJs](http://nodejs.org/#download) installation on your system.
 2. Download the [latest version](https://github.com/feugy/easydoc/zipball/master) of easydoc and unzip it
-3. From the command line, build it: > npm install -g
-4. Also from the command line, run it > easydoc
+3. From the command line, build it: > npm install
+4. Also from the command line, run it > bin/easydoc -v docs/custom.yml (or node .\bin\easydoc .\docs\custom.yml under windows)
 
 
-## How can I use it ?
+## Documentation
 
-Once the server is running, simply drops your documentation files written in 
-markdown and with the 'md' extension in the _docs_ folder.
+You can watch it online, [on github](https://github.com/feugy/easydoc/blob/master/docs/index.md)
+Or, once you've started your server, goes to [http://localhost](http://localhost) and you're in !
 
-Let's say your file is named 'myfile.md'
-With a browser, go to [http://localhost/myfile.md]: that's it !
-Your markdown file is rendered inside a template (to add header, footer, navigation menu...).
-
-But you can also put any arbitrary file inside the _docs_ folder: they will be served as well, but not wrapped inside the template.
-
-And, when you request the root directory, the page rendered will be the first file accorded to ranking (see below).
+If you encounter problems, try the CLI help > bin/easydoc -h
 
 
-## Markdown meta datas
-
-Inside a markdown file, at the very begining, you can specify meta datas (it's totally optionnal):
-
-    ---
-    title: Welcome
-    anything: Yes !
-    rank: 10
-    ---
-
-Metas are simply key-value pair (separated by `:` and trimmed), and can be used inside the template.
-
-It's the perfect place to customize the order of your markdown files inside navigation menus: specify the rank key (an integer value) to control the files order. If no rank is found, a default value of `0` is used, and natural order applies, based on the file name.
-
-You can use any arbitrary key, except title and rank that will overide page defaults.
-
-
-## How do I customize the look&feel ?
-
-For the markup, just edit the two template files inside the __assets_ folder:
-
-- page.tpl. It displays a single page with the file index and search box.
-- search.tpl. It shows the search results.
-
-They are using the [mustache](http://mustache.github.com/) templating language. Very easy to use.
-
-Fot rendering customizations, all is in the style.css file.
-
-
-## I need to customize the root folder !
-
-When launching the server, you can specify your root folder. 
-
-Here is the command line documentation of the server:
-
-    Usage: ./easydoc [options]
-    
-    Options:
-    
-        -h, --help            output usage information
-        -V, --version         output the version number
-        -r, --root [docs]     Absolute or relative path to the root folder containing static and markdown files.
-        -t, --title label     Title of the site as printed in the tab or title bar of the browser.
-        -p, --port [80]       Local port of the created Http server.
-        -h, --host [0.0.0.0]  Hostname of the created Http server.
-        --no-cache            Disable mustache template caching (for dev purposes)
-        
-
-## Can I customize my templates ?
-
-For sure ! the variables that you can use inside templates are:
-
-### page.tpl
-
-- path: relative url of the current page
-- title: current page's friendly title
-- rank: current page's rank inside all known pages
-- content: the HTML content of the displayed markdown file.
-- pages: handy to make navigation bars, this array contains for each doc pages the following sub object
-    - path: relative url to the page
-    - title: page's friendly title
-
-And any other metas defined inside the markdown file.
-
-### search.tpl
-
-- title: site title defined with `-t` cli option
-- searched: the seached string
-- singleResult: true if only one result page found
-- noResult: true if not any result found
-- numResults: number of result found
-- results: for each page found, an object containing :
-    - path: relative url to the found page
-    - title: found page's friendly title
-    - numHits: number of time the searched string was found inside the page
-    - hits: an array containing for each hit an object with a single string attribute `hit` with the matching line
-- pages: handy to make navigation bars, this array contains for each doc pages the following sub object
-    - path: relative url to the page
-    - title: page's friendly title
-
-Inside page hits, the searched string is wrapped inside a `bold` Html markup.
-
-
-## Are their limitations ?
-
-Yes, plenty ! But i'll enrich it latter ^_^
-
-- all markdown files at the same level, in the same folder. No sub-folders.
-- assets (page.tpl, search.tpl, style.css, images) must be in the __assets_ folder inside the document root.
-- no page templating (mustache) in plain html file.
-- markdown files must have the .md extension.
-- search use original markdown file, not interpreted content. It may lead to false-positive results.
 
 ---
-  have fun !
+   have fun!

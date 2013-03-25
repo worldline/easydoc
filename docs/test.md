@@ -1,3 +1,7 @@
+---
+rank: 1
+---
+
 # Page title
 
 
