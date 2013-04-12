@@ -4,7 +4,7 @@ var launchServer = require('../lib/easydoc');
 var path = require('path');
 require('js-yaml');
 
-cli.version('0.5.0')
+cli.version('0.6.0')
   .option('-r, --root [docs]', 'Absolute or relative path to the root folder containing static and markdown files.', String, 'docs')
   .option('-t, --title [label]', 'Title of the site as printed in the tab or title bar of the browser.', String, 'Easydoc')
   .option('-p, --port [80]', 'Local port of the created Http server.', parseInt, 80)
