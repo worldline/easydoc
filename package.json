@@ -1,6 +1,6 @@
 {
   "name": "easydoc",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "feugy <damien.feugas@gmail.com>",
   "description": "A simple technical documentation site with markdown files",
   "repository": {
@@ -28,8 +28,8 @@
   "dependencies" : {
     "commander": "1.1.1",
     "express": "3.1.0",
+    "hogan.js": "2.0.0",
     "js-yaml": "2.0.3",
-    "mu2": "0.5.17",
     "node-markdown": "0.1.1",
     "underscore": "1.4.4"
   },
