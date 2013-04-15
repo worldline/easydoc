@@ -1,6 +1,6 @@
 {
   "name": "easydoc",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": "feugy <damien.feugas@gmail.com>",
   "description": "A simple technical documentation site with markdown files",
   "repository": {
